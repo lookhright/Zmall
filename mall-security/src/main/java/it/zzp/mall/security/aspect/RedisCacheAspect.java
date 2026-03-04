@@ -1,6 +1,6 @@
-package com.macro.mall.security.aspect;
+package it.zzp.mall.security.aspect;
 
-import com.macro.mall.security.annotation.CacheException;
+import it.zzp.mall.security.annotation.CacheException;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
 import org.aspectj.lang.annotation.Around;
@@ -16,7 +16,7 @@ import java.lang.reflect.Method;
 
 /**
  * Redis缓存切面，防止Redis宕机影响正常业务逻辑
- * Created by macro on 2020/3/17.
+ *
  */
 @Aspect
 @Component
@@ -24,7 +24,7 @@ import java.lang.reflect.Method;
 public class RedisCacheAspect {
     private static final Logger LOGGER = LoggerFactory.getLogger(RedisCacheAspect.class);
 
-    @Pointcut("execution(public * com.macro.mall.portal.service.*CacheService.*(..)) || execution(public * com.macro.mall.service.*CacheService.*(..))")
+    @Pointcut("execution(public * it.zzp.mall.portal.service.*CacheService.*(..)) || execution(public * it.zzp.mall.common.service.*CacheService.*(..))")
     public void cacheAspect() {
     }
 

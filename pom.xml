@@ -95,21 +95,21 @@
         <dependencies>
             <!--mall通用模块-->
             <dependency>
-                <groupId>com.macro.mall</groupId>
+                <groupId>it.zzp</groupId>
                 <artifactId>mall-common</artifactId>
-                <version>${mall-common.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!--mall中MBG生成模块-->
             <dependency>
-                <groupId>com.macro.mall</groupId>
+                <groupId>it.zzp</groupId>
                 <artifactId>mall-mbg</artifactId>
-                <version>${mall-mbg.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!--mall安全模块-->
             <dependency>
-                <groupId>com.macro.mall</groupId>
+                <groupId>it.zzp</groupId>
                 <artifactId>mall-security</artifactId>
-                <version>${mall-security.version}</version>
+                <version>0.0.1-SNAPSHOT</version>
             </dependency>
             <!--MyBatis分页插件starter-->
             <dependency>

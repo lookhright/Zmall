@@ -1,10 +1,12 @@
-package com.macro.mall.security.component;
+package it.zzp.mall.security.component;
 
 import cn.hutool.core.util.URLUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.security.access.ConfigAttribute;
 import org.springframework.security.web.FilterInvocation;
 import org.springframework.security.web.access.intercept.FilterInvocationSecurityMetadataSource;
+import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
@@ -13,8 +15,10 @@ import java.util.*;
 
 /**
  * 动态权限数据源，用于获取动态权限规则
- * Created by macro on 2020/2/7.
+ *
  */
+@Component  // 添加此注解
+@ConditionalOnBean(name = "dynamicSecurityService")  // 条件化
 public class DynamicSecurityMetadataSource implements FilterInvocationSecurityMetadataSource {
 
     private static Map<String, ConfigAttribute> configAttributeMap = null;

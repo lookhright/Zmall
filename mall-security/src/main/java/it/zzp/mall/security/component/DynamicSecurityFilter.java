@@ -1,12 +1,15 @@
-package com.macro.mall.security.component;
+package it.zzp.mall.security.component;
 
-import com.macro.mall.security.config.IgnoreUrlsConfig;
+import it.zzp.mall.security.config.IgnoreUrlsConfig;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.http.HttpMethod;
 import org.springframework.security.access.SecurityMetadataSource;
 import org.springframework.security.access.intercept.AbstractSecurityInterceptor;
 import org.springframework.security.access.intercept.InterceptorStatusToken;
 import org.springframework.security.web.FilterInvocation;
+import org.springframework.stereotype.Component;
 import org.springframework.util.AntPathMatcher;
 import org.springframework.util.PathMatcher;
 
@@ -16,8 +19,10 @@ import java.io.IOException;
 
 /**
  * 动态权限过滤器，用于实现基于路径的动态权限过滤
- * Created by macro on 2020/2/7.
+ *
  */
+@Component
+@ConditionalOnBean(name = "dynamicSecurityService") //条件化
 public class DynamicSecurityFilter extends AbstractSecurityInterceptor implements Filter {
 
     @Autowired

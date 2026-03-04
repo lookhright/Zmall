@@ -1,4 +1,4 @@
-package com.macro.mall.security.util;
+package it.zzp.mall.security.util;
 
 import org.springframework.beans.BeansException;
 import org.springframework.context.ApplicationContext;
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 
 /**
  * Spring工具类
- * Created by macro on 2020/3/3.
+ *
  */
 @Component
 public class SpringUtil implements ApplicationContextAware {

@@ -1,17 +1,18 @@
-package com.macro.mall.security.config;
+package it.zzp.mall.security.config;
 
-import com.macro.mall.security.component.*;
-import com.macro.mall.security.util.JwtTokenUtil;
+import it.zzp.mall.security.component.*;
+import it.zzp.mall.security.util.JwtTokenUtil;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 /**
  * SpringSecurity通用配置
  * 包括通用Bean、Security通用Bean及动态权限通用Bean
- * Created by macro on 2022/5/20.
+ *
  */
 @Configuration
 public class CommonSecurityConfig {
@@ -21,30 +22,31 @@ public class CommonSecurityConfig {
         return new BCryptPasswordEncoder();
     }
 
-    @Bean
-    public IgnoreUrlsConfig ignoreUrlsConfig() {
-        return new IgnoreUrlsConfig();
-    }
+    // Deleted:@Bean
+    // Deleted:public IgnoreUrlsConfig ignoreUrlsConfig() {
+    // Deleted:    return new IgnoreUrlsConfig();
+    // Deleted:}
 
     @Bean
     public JwtTokenUtil jwtTokenUtil() {
         return new JwtTokenUtil();
     }
 
-    @Bean
-    public RestfulAccessDeniedHandler restfulAccessDeniedHandler() {
-        return new RestfulAccessDeniedHandler();
-    }
+    // Deleted:@Bean
+    // Deleted:public RestfulAccessDeniedHandler restfulAccessDeniedHandler() {
+    // Deleted:    return new RestfulAccessDeniedHandler();
+    // Deleted:}
 
-    @Bean
-    public RestAuthenticationEntryPoint restAuthenticationEntryPoint() {
-        return new RestAuthenticationEntryPoint();
-    }
+    // Deleted:@Bean
+    // Deleted:public RestAuthenticationEntryPoint restAuthenticationEntryPoint() {
+    // Deleted:    return new RestAuthenticationEntryPoint();
+    // Deleted:}
 
-    @Bean
-    public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter(){
-        return new JwtAuthenticationTokenFilter();
-    }
+    // Deleted:@Bean
+    // Deleted:public JwtAuthenticationTokenFilter jwtAuthenticationTokenFilter(){
+    // Deleted:    return new JwtAuthenticationTokenFilter();
+    // Deleted:}
+
 
     @ConditionalOnBean(name = "dynamicSecurityService")
     @Bean

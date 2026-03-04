@@ -1,7 +1,7 @@
-package com.macro.mall.security.component;
+package it.zzp.mall.security.component;
 
 import cn.hutool.json.JSONUtil;
-import com.macro.mall.common.api.CommonResult;
+import it.zzp.mall.common.api.CommonResult;
 import org.springframework.security.access.AccessDeniedException;
 import org.springframework.security.web.access.AccessDeniedHandler;
 import org.springframework.stereotype.Component;
@@ -13,8 +13,9 @@ import java.io.IOException;
 
 /**
  * 自定义无权限访问的返回结果
- * Created by macro on 2018/4/26.
+ *
  */
+@Component
 public class RestfulAccessDeniedHandler implements AccessDeniedHandler{
     @Override
     public void handle(HttpServletRequest request,

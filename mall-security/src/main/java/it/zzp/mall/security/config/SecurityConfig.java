@@ -1,6 +1,8 @@
-package com.macro.mall.security.config;
+package it.zzp.mall.security.config;
 
-import com.macro.mall.security.component.*;
+import it.zzp.mall.security.component.*;
+import it.zzp.mall.security.component.RestAuthenticationEntryPoint;
+import it.zzp.mall.security.component.RestfulAccessDeniedHandler;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -12,14 +14,16 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.intercept.FilterSecurityInterceptor;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.stereotype.Component;
 
 
 /**
  * SpringSecurity相关配置，仅用于配置SecurityFilterChain
- * Created by macro on 2019/11/5.
+ *
  */
 @Configuration
 @EnableWebSecurity
+
 public class SecurityConfig {
 
     @Autowired
